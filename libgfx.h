@@ -6,7 +6,7 @@
 /*   By: jsalmi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 14:44:05 by jsalmi            #+#    #+#             */
-/*   Updated: 2020/09/26 18:32:20 by jsalmi           ###   ########.fr       */
+/*   Updated: 2020/09/27 12:50:40 by jsalmi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ struct				s_vector
 };
 
 t_vertex			*gfx_new_vertex(int x, int y, int z);
+t_vector			*gfx_new_vector(t_vertex *v1, t_vertex *v2);
 void				ft_draw_vector(SDL_Surface *surf, Uint32 color, t_vertex *v1, t_vertex *v2);
 
 #endif

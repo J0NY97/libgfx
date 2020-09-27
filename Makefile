@@ -6,12 +6,13 @@
 #    By: jsalmi <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/17 15:28:58 by jsalmi            #+#    #+#              #
-#    Updated: 2020/09/26 18:32:38 by jsalmi           ###   ########.fr        #
+#    Updated: 2020/09/27 12:51:14 by jsalmi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libgfx.a
 SRCS = gfx_new_vertex.c \
+	   gfx_new_vector.c \
 		gfx_draw_vector.c
 OBJS = $(SRCS:.c=.o)
 INCLUDES = -I ../libft -I ../ft_printf -I ../libui
