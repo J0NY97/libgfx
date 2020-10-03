@@ -13,7 +13,10 @@
 NAME = libgfx.a
 SRCS = gfx_new_vertex.c \
 	   gfx_new_vector.c \
-		gfx_draw_vector.c
+		gfx_draw_vector.c \
+		gfx_get_vertex_cross.c \
+		gfx_get_vertex_dot.c \
+		gfx_vertex_on_vector.c
 OBJS = $(SRCS:.c=.o)
 INCLUDES = -I ../libft -I ../ft_printf -I ../libui
 LIBS = libgfx.h

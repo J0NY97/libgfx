@@ -35,5 +35,8 @@ struct				s_vector
 t_vertex			*gfx_new_vertex(int x, int y, int z);
 t_vector			*gfx_new_vector(t_vertex *v1, t_vertex *v2);
 void				ft_draw_vector(SDL_Surface *surf, Uint32 color, t_vertex *v1, t_vertex *v2);
+int					gfx_get_vertex_cross(t_vertex *curr, t_vertex *v1, t_vertex *v2);
+int					gfx_get_vertex_dot(t_vertex *curr, t_vertex *v1, t_vertex *v2);
+int					gfx_vertex_on_vector(t_vertex *curr, t_vector *v);
 
 #endif
