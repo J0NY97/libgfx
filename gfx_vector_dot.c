@@ -12,20 +12,18 @@
 
 #include "libgfx.h"
 
-int		gfx_get_vertex_dot(t_vertex *curr, t_vertex *v1, t_vertex *v2)
+int		gfx_vector_dot(t_vector *curr, t_vector *v1, t_vector *v2)
 {
 	int v1x;
 	int v1y;
 	int v2x;
 	int v2y;
-	int	cross;
+	int	dot;
 
 	v1x = curr->x - v1->x;
 	v1y = curr->y - v1->y;
-	v2x = v2->x - curr->x;
-	v2y = v2->y - curr->y;
-	cross = v1x * v2x + v1y * v2y;
-	if (cross <= 0)
-		return (1);
-	return (0);
+	v2x = v2->x - v1->x;
+	v2y = v2->y - v1->y;
+	dot = v1x * v2y - v1y * v2x;
+	return (dot);
 }

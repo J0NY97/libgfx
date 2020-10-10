@@ -16,27 +16,28 @@
 # include "libui.h"
 # include "ft_printf.h"
 
-typedef	struct	s_vertex		t_vertex;
+typedef	struct	s_line			t_line;
 typedef	struct	s_vector		t_vector;
 
-struct				s_vertex
+struct				s_line
 {
-	int				x;
-	int				y;
-	int				z;
+	t_vector		*orig;
+	t_vector		*dest;
 };
 
 struct				s_vector
 {
-	t_vertex		*orig;
-	t_vertex		*dest;
+	double			x;
+	double			y;
+	double			z;
 };
 
-t_vertex			*gfx_new_vertex(int x, int y, int z);
-t_vector			*gfx_new_vector(t_vertex *v1, t_vertex *v2);
-void				ft_draw_vector(SDL_Surface *surf, Uint32 color, t_vertex *v1, t_vertex *v2);
-int					gfx_get_vertex_cross(t_vertex *curr, t_vertex *v1, t_vertex *v2);
-int					gfx_get_vertex_dot(t_vertex *curr, t_vertex *v1, t_vertex *v2);
-int					gfx_vertex_on_vector(t_vertex *curr, t_vector *v);
+t_vector			*gfx_new_vector(double x, double y, double z);
+int					gfx_vector_dot(t_vector *curr, t_vector *v1, t_vector *v2);
+void				gfx_draw_vector(SDL_Surface *surface, Uint32 color, unsigned int size, t_vector *v);
+void				gfx_vector_string(t_vector *v);
+
+t_line				*gfx_new_line(t_vector *orig, t_vector *dest);
+void				gfx_draw_line(SDL_Surface *surf, Uint32 color, t_vector *v1, t_vector *v2);
 
 #endif

@@ -12,17 +12,34 @@
 
 #include "libgfx.h"
 
-int	gfx_vertex_on_vector(t_vertex *curr, t_vector *v)
+void				gfx_draw_line(SDL_Surface *surf, Uint32 color, t_vector *v1, t_vector *v2)
 {
-	t_vertex *v1;
-	t_vertex *v2;
+	int			cath_x;
+	int			cath_y;
+	int			x;
+	int			y;
+	int			overflow_x;
+	int			overflow_y;
 
-	v1 = v->orig;
-	v2 = v->dest;
-	if (curr->x >= ft_min(v1->x, v2->x) && curr->x <= ft_max(v1->x, v2->x))
+	cath_x = (v2->y - v1->y) < 0 ? (v2->y - v1->y) * -1 : (v2->y - v1->y);
+	cath_y = (v2->x - v1->x) < 0 ? (v2->x - v1->x) * -1 : (v2->x - v1->x);
+	overflow_y = cath_y - cath_x;
+	x = v1->x;
+	y = v1->y;
+	while (x != v2->x || y != v2->y)
 	{
-		if (curr->y >= ft_min(v1->y, v2->y) && curr->y <= ft_max(v1->y, v2->y))
-			return (1);
+		if (!(x < 0 || x >= surf->w || y < 0 || y >= surf->h))
+			set_pixel(surf, x, y, color);
+		overflow_x = overflow_y * 2;
+		if (overflow_x > -(cath_x))
+		{
+			overflow_y -= cath_x;
+			x += x < v2->x ? 1 : -1;
+		}
+		else if (overflow_x < cath_x)
+		{
+			overflow_y += cath_y;
+			y += y < v2->y ? 1 : -1;
+		}
 	}
-	return (0);
 }

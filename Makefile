@@ -11,21 +11,20 @@
 # **************************************************************************** #
 
 NAME = libgfx.a
-SRCS = gfx_new_vertex.c \
-	   gfx_new_vector.c \
+SRCS =	gfx_new_vector.c \
 		gfx_draw_vector.c \
-		gfx_get_vertex_cross.c \
-		gfx_get_vertex_dot.c \
-		gfx_vertex_on_vector.c
+		gfx_draw_line.c \
+		gfx_vector_dot.c \
+		gfx_new_line.c \
+		gfx_vector_string.c
 OBJS = $(SRCS:.c=.o)
-INCLUDES = -I ../libft -I ../ft_printf -I ../libui
 LIBS = libgfx.h
 FLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
-$(NAME):
-	@gcc -c $(SRCS) $(FLAGS) $(INCLUDES)
+$(NAME): $(SRCS)
+	@gcc -c $(SRCS) $(FLAGS)  -I ../libft -I ../libui -I ../ft_printf
 	@ar rc $(NAME) $(OBJS)
 	@ranlib $(NAME)
 	@/bin/rm -f $(OBJS)

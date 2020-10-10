@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   gfx_new_vertex.c                                   :+:      :+:    :+:   */
+/*   draw_functions.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsalmi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/26 17:30:09 by jsalmi            #+#    #+#             */
-/*   Updated: 2020/09/26 17:40:49 by jsalmi           ###   ########.fr       */
+/*   Created: 2020/09/26 15:07:25 by jsalmi            #+#    #+#             */
+/*   Updated: 2020/09/27 16:30:53 by jsalmi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libgfx.h"
 
-t_vertex	*gfx_new_vertex(int x, int y, int z)
+// Not sure if the line should be copies of orig and dest or just the actual ones...
+t_line		*gfx_new_line(t_vector *orig, t_vector *dest)
 {
-	t_vertex *new_vertex;
+	t_line *new_line;
 
-	if (!(new_vertex = (t_vertex *)malloc(sizeof(t_vertex))))
+	if (!(new_line = (t_line *)malloc(sizeof(t_line))))
 	{
-		ft_printf("Vertex couldnt be malloced");
+		ft_printf("New line couldnt be malloced\n");
 		return (NULL);
 	}
-	new_vertex->x = x;
-	new_vertex->y = y;
-	new_vertex->z = z;
-	return (new_vertex);
+	new_line->dest = dest;
+	new_line->orig = orig;
+	return (new_line);
 }

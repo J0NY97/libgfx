@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   gfx_new_vector.c                                   :+:      :+:    :+:   */
+/*   draw_functions.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsalmi <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/27 12:46:42 by jsalmi            #+#    #+#             */
-/*   Updated: 2020/09/27 12:50:11 by jsalmi           ###   ########.fr       */
+/*   Created: 2020/09/26 15:07:25 by jsalmi            #+#    #+#             */
+/*   Updated: 2020/09/27 16:30:53 by jsalmi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libgfx.h"
 
-t_vector	*gfx_new_vector(double x, double y, double z)
+void	gfx_vector_string(t_vector *v)
 {
-	t_vector *vector;
-
-	if (!(vector = (t_vector *)malloc(sizeof(t_vector))))
-	{
-		ft_putstr("Vector couldnt be malloced.\n");
-		return (NULL);
-	}
-	vector->x = x;
-	vector->y = y;
-	vector->z = z;
-	return (vector);
+	ft_printf("Vector( x:%.2f, y:%.2f z:%.2f )\n", v->x, v->y, v->z);
 }
