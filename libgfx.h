@@ -16,14 +16,7 @@
 # include "libui.h"
 # include "ft_printf.h"
 
-typedef	struct	s_line			t_line;
 typedef	struct	s_vector		t_vector;
-
-struct				s_line
-{
-	t_vector		*orig;
-	t_vector		*dest;
-};
 
 struct				s_vector
 {
@@ -32,12 +25,11 @@ struct				s_vector
 	double			z;
 };
 
-t_vector			*gfx_new_vector(double x, double y, double z);
-int					gfx_vector_dot(t_vector *curr, t_vector *v1, t_vector *v2);
-void				gfx_draw_vector(SDL_Surface *surface, Uint32 color, unsigned int size, t_vector *v);
-void				gfx_vector_string(t_vector *v);
+t_vector			gfx_new_vector(double x, double y, double z);
+int					gfx_vector_dot(t_vector curr, t_vector v1, t_vector v2);
+void				gfx_draw_vector(SDL_Surface *surface, Uint32 color, unsigned int size, t_vector v);
+void				gfx_vector_string(t_vector v);
 
-t_line				*gfx_new_line(t_vector *orig, t_vector *dest);
-void				gfx_draw_line(SDL_Surface *surf, Uint32 color, t_vector *v1, t_vector *v2);
+void				gfx_draw_line(SDL_Surface *surf, Uint32 color, t_vector v1, t_vector v2);
 
 #endif

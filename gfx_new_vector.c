@@ -12,17 +12,12 @@
 
 #include "libgfx.h"
 
-t_vector	*gfx_new_vector(double x, double y, double z)
+t_vector	gfx_new_vector(double x, double y, double z)
 {
-	t_vector *vector;
+	t_vector vector;
 
-	if (!(vector = (t_vector *)malloc(sizeof(t_vector))))
-	{
-		ft_putstr("Vector couldnt be malloced.\n");
-		return (NULL);
-	}
-	vector->x = x;
-	vector->y = y;
-	vector->z = z;
+	vector.x = x;
+	vector.y = y;
+	vector.z = z;
 	return (vector);
 }

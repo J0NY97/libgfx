@@ -15,7 +15,6 @@ SRCS =	gfx_new_vector.c \
 		gfx_draw_vector.c \
 		gfx_draw_line.c \
 		gfx_vector_dot.c \
-		gfx_new_line.c \
 		gfx_vector_string.c
 OBJS = $(SRCS:.c=.o)
 LIBS = libgfx.h

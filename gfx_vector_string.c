@@ -12,7 +12,7 @@
 
 #include "libgfx.h"
 
-void	gfx_vector_string(t_vector *v)
+void	gfx_vector_string(t_vector v)
 {
-	ft_printf("Vector( x:%.2f, y:%.2f z:%.2f )\n", v->x, v->y, v->z);
+	ft_printf("Vector( x:%.2f, y:%.2f z:%.2f )\n", v.x, v.y, v.z);
 }
