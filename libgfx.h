@@ -26,10 +26,13 @@ struct				s_vector
 };
 
 t_vector			gfx_new_vector(double x, double y, double z);
-int					gfx_vector_dot(t_vector curr, t_vector v1, t_vector v2);
-void				gfx_draw_vector(SDL_Surface *surface, Uint32 color, unsigned int size, t_vector v);
 void				gfx_vector_string(t_vector v);
 
+int					gfx_vector_dot(t_vector curr, t_vector v1, t_vector v2); // should probably return double
+double				gfx_distance(t_vector v1, t_vector v2);
+
+void				gfx_draw_vector(SDL_Surface *surface, Uint32 color, unsigned int size, t_vector v);
 void				gfx_draw_line(SDL_Surface *surf, Uint32 color, t_vector v1, t_vector v2);
+void				gfx_draw_rect(SDL_Surface *surface, Uint32 color, t_xywh dim);
 
 #endif
