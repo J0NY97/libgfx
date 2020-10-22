@@ -17,7 +17,9 @@ SRCS =	gfx_new_vector.c \
 		gfx_vector_dot.c \
 		gfx_vector_string.c \
 		gfx_draw_rect.c \
-		gfx_distance.c
+		gfx_distance.c \
+		gfx_hitbox_square.c \
+		gfx_vector_multiply.c
 OBJS = $(SRCS:.c=.o)
 LIBS = libgfx.h
 FLAGS = -Wall -Wextra -Werror
