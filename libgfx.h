@@ -35,6 +35,7 @@ t_vector			gfx_vector_multiply(t_vector v, int mult);
 void				gfx_draw_vector(SDL_Surface *surface, Uint32 color, unsigned int size, t_vector v);
 void				gfx_draw_line(SDL_Surface *surf, Uint32 color, t_vector v1, t_vector v2);
 void				gfx_draw_rect(SDL_Surface *surface, Uint32 color, t_xywh dim);
+void				gfx_raster(SDL_Surface *surf, Uint32 color, int x0, int x1, int y0);
 
 int					gfx_hitbox_square(int x, int y, t_xywh rect);
 
